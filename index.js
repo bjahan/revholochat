@@ -25,12 +25,12 @@ io.on('connection', function(socket){
 	
 	socket.on('chat message', function(msg){
 		console.log('message:' + msg);
-		socket.broadcast.emit('chat message', msg);
+		io.emit('chat message', msg);
 	});
 	
 	socket.on('status', function(msg){
 		console.log('status:' + msg);
-		socket.broadcast.emit('status', msg);
+		io.emit('status', msg);
 	});
 })
 
