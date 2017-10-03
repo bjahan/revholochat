@@ -12,14 +12,16 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
 	console.log('user ' + socket.id + ' connected');
 	
-	socket.on('connect', function(name){
+	socket.on('intro', function(name){
 		if (name == 'RevitPlugin')
 		{
 			RevitSocket = socket.id;
+			console.log('RevitPlugin');
 		}
 		if (name == 'HoloLensApp')
 		{
 			HololensSocket = socket.id;
+			console.log('HoloLensApp')
 		}
 	});
 	
@@ -30,7 +32,7 @@ io.on('connection', function(socket){
 	
 	socket.on('status', function(msg){
 		console.log('status:' + msg);
-		io.emit('status', msg);
+		//io.emit('status', msg);
 	});
 })
 
