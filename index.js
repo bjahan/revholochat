@@ -13,25 +13,24 @@ io.on('connection', function(socket){
 	console.log('user ' + socket.id + ' connected');
 	
 	socket.on('intro', function(name){
+		console.log('name: ' + name);
 		if (name == 'RevitPlugin')
 		{
 			RevitSocket = socket.id;
-			console.log('RevitPlugin');
 		}
 		if (name == 'HoloLensApp')
 		{
 			HololensSocket = socket.id;
-			console.log('HoloLensApp')
 		}
 	});
 	
 	socket.on('chat message', function(msg){
-		console.log('message:' + msg);
+		console.log('message: ' + msg);
 		io.emit('chat message', msg);
 	});
 	
 	socket.on('status', function(msg){
-		console.log('status:' + msg);
+		console.log('status: ' + msg);
 		//io.emit('status', msg);
 	});
 })
