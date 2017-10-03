@@ -33,6 +33,10 @@ io.on('connection', function(socket){
 		console.log('status: ' + msg);
 		//io.emit('status', msg);
 	});
+	
+	socket.on('disconnect', function(){
+		console.log('user ' + socket.id + ' disconnected');
+	});
 })
 
 http.listen(port, function(){
