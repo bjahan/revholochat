@@ -36,7 +36,7 @@ io.on('connection', function(socket){
 			
         var data = {
           externalId : 315531,
-          offset : offset
+          translation : offset
         };
 		
 		io.emit('transform', JSON.stringify(data));
