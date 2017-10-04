@@ -26,7 +26,20 @@ io.on('connection', function(socket){
 	
 	socket.on('chat message', function(msg){
 		console.log('message: ' + msg);
-		io.emit('chat message', msg);
+		//io.emit('chat message', msg);
+		
+		var offset = {
+          	x : 3,
+          	y : 2,
+			z : 0
+        };
+			
+        var data = {
+          externalId : 315531,
+          offset : offset
+        };
+		
+		io.emit('transform', JSON.stringify(data));
 	});
 	
 	socket.on('status', function(msg){
