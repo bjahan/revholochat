@@ -42,6 +42,13 @@ io.on('connection', function(socket){
 		io.emit('transform', JSON.stringify(data));
 	});
 	
+	socket.on('move', function(msg){
+		console.log('move: ' + msg);
+		//io.emit('chat message', msg);
+		io.emit('move', msg);
+	});
+	
+	
 	socket.on('status', function(msg){
 		console.log('status: ' + msg);
 		//io.emit('status', msg);
