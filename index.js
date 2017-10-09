@@ -49,8 +49,8 @@ io.on('connection', function(socket){
 	});
 	
 	
-	socket.on('status', function(msg){
-		console.log('status: ' + msg.name);
+	socket.on('status', function(){
+		console.log('status: ' + 'Received message');
 		//io.emit('status', msg);
 	});
 	
