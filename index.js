@@ -50,7 +50,7 @@ io.on('connection', function(socket){
 	
 	
 	socket.on('status', function(msg){
-		console.log('status: ' + 'Received message');
+		console.log('status: ' + msg.name);
 		io.emit('status', msg);
 	});
 	
