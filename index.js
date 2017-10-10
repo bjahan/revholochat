@@ -43,7 +43,7 @@ io.on('connection', function(socket){
 	});
 	
 	socket.on('move', function(msg){
-		console.log('move: ' + msg);
+		console.log('move: ' + msg.id + '  ' + msg.vec);
 		//io.emit('chat message', msg);
 		io.emit('move', msg);
 	});
