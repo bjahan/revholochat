@@ -48,6 +48,11 @@ io.on('connection', function(socket){
 		io.emit('move', msg);
 	});
 	
+	socket.on('location', function(msg){
+		console.log('location: ' + msg.id + '  ' + msg.pos + '  ' + msg.dir);
+		//io.emit('chat message', msg);
+		io.emit('location', msg);
+	});
 	
 	socket.on('status', function(msg){
 		console.log('status: ' + msg.name);
